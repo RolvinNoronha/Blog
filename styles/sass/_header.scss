@@ -1,0 +1,82 @@
+.header {
+
+    display: flex;
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary;
+    padding: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-wrap: wrap;
+    }
+
+    &__title {
+
+        &:link,
+        &:visited {
+            font-weight: 500;
+            color: $color-h1;
+            font-size: 3rem;
+            margin: 1rem;
+            text-decoration: none
+        }
+    }
+
+
+    &__search {
+
+        display: flex;
+        width: 30%;
+
+        @media only screen and (max-width: $bp-medium) {
+            order: 1;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        &-input {
+            font-size: 1.6rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid $color-secondary;
+            flex: 1;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &-btn {
+            color: $color-font;
+            font-size: 1.6rem;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            margin-left: -2.5rem;
+            border-radius: 100px;
+            cursor: pointer;
+            background-color: $color-secondary;
+        }
+    }
+
+    &__link {
+
+        transition: all 0.3s;
+
+        &:visited,
+        &:link {
+            color: $color-font;
+            margin: 1rem;
+            font-size: 1.6rem;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            background-color: $color-secondary;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

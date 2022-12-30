@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+
+$color-primary: #A9D6E5;
+$color-secondary: #61A5C2;
+
+$color-h1: #012A4A; 
+$color-font: #012A4A;
+$color-p: #012A4A;
+
+
+$bp-large: 62.5em;
+$bp-medium: 37.5em;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-family: Open Sans, "sans-serif";
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;
+    }
+}

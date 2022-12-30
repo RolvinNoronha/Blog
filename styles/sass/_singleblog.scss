@@ -1,0 +1,33 @@
+.singleblog {
+    margin: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+
+    &__title {
+        color: $color-h1;
+        font-size: 3.5rem;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 60vh;
+
+        @media only screen and (max-width: $bp-medium) {
+            height: 40vh;
+        }
+    }
+
+    &__content {
+        color: $color-p;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
+.singleblog > * {
+    margin-bottom: 2rem;
+}
