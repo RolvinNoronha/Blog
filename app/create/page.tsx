@@ -15,25 +15,27 @@ export default function Create() {
     const router = useRouter();
 
     const storageRef = ref(storage);
-    const imagesRef = ref(storageRef, 'images');
-
-
+    
+    
     const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
         // @ts-ignore
         setImg(e.target.files[0]);
     }
-
+    
     const handleSubmit : React.FormEventHandler<HTMLFormElement> = async (e)  => {
         e.preventDefault();
-    
+        
         const docRef = await addDoc(collection(db, "blogs"), {
             title: title,
             content: content,
             timestamp: serverTimestamp(),
         });
+        
+
+        const imgRef = ref(storageRef, `images/${docRef.id}/image`);
 
         //@ts-ignore
-        uploadBytes(imagesRef, img).then(async (snapshot) => { 
+        uploadBytes(imgRef, img).then(async (snapshot) => { 
             getDownloadURL(snapshot.ref).then( async (downloadURL) => {
                 await updateDoc(doc(db, "blogs", docRef.id), {
                     image: downloadURL
@@ -73,3 +75,4 @@ export default function Create() {
         >Submit</button>
     </form>
 }
+

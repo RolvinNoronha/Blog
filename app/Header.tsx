@@ -14,6 +14,7 @@ export default function Header() {
         e.preventDefault();
 
         router.push(`/search?keyword=${keyword}`)
+        setKeyword("");
     }
 
     return (
@@ -23,6 +24,7 @@ export default function Header() {
                 <input 
                     onChange={(e) => setKeyword(e.target.value)}
                     type="text" 
+                    value={keyword}
                     placeholder="Search Blogs.." 
                     className="header__search-input" />
 
